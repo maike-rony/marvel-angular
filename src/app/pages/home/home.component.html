@@ -11,11 +11,14 @@
 
   </div>
   <div class="container__content">
-    <app-table-filter-characters (callbackFilterElement)="callbackFilterElement($event)">
+    <app-table-filter-characters
+      (callbackFilterElement)="callbackFilterElement($event)">
     </app-table-filter-characters>
     <div>
       <ng-container *ngIf="dataCharacters && dataCharacters.length !== 0; else elseTemplate">
-        <app-table-characters [dataCharacters]="dataCharacters"></app-table-characters>
+        <app-table-characters
+          [dataCharacters]="dataCharacters">
+        </app-table-characters>
       </ng-container>
       <ng-template #elseTemplate>
         <h2> Nenhum Dado Encontrado! </h2>
@@ -23,8 +26,13 @@
     </div>
   </div>
   <div class="container_paginator">
-    <mat-paginator (page)="handlePageEvent($event)" [length]="paginator.length" [pageSize]="paginator.pageSize"
-      [showFirstLastButtons]="true" [pageSizeOptions]="false" [hidePageSize]="true">
+    <mat-paginator
+      (page)="handlePageEvent($event)"
+      [length]="paginator.length"
+      [pageSize]="paginator.pageSize"
+      [showFirstLastButtons]="true"
+      [pageSizeOptions]="false"
+      [hidePageSize]="true">
     </mat-paginator>
   </div>
 </div>

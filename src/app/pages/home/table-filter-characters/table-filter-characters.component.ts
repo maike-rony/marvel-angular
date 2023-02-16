@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { debounceTime } from 'rxjs/operators';
 
 @Component({
@@ -10,7 +10,6 @@ import { debounceTime } from 'rxjs/operators';
 export class TableFilterCharactersComponent implements OnInit {
 
   public formSearch: FormGroup;
-
   @Output() callbackFilterElement = new EventEmitter();
 
   constructor(
