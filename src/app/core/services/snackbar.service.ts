@@ -17,7 +17,7 @@ export class SnackBarService {
   }
 
   success(msg: string, duration?: number, action?: string): void {
-    this._snackBar.open(msg, action, { duration: duration || 2000, panelClass: ['success-snackbar'], verticalPosition: 'top', horizontalPosition: 'right' });
+    this._snackBar.open(msg, action, { duration: duration || 2000, panelClass: ['success-snackbar'], verticalPosition: 'top', horizontalPosition: 'center' });
   }
 
   alert(msg: string, duration?: number, action?: string): void {

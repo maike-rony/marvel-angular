@@ -23,7 +23,7 @@ export class HomeService {
   constructor(
     private http: HttpClient,
     private snackBarService: SnackBarService,
-    private marvelService: MarvelService,
+    private marvelService: MarvelService
   ) {
     this.urlHash = this.marvelService.generatorUrl();
   }

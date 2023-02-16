@@ -3,6 +3,7 @@ import { IComics, IResponseData } from 'src/app/core/interfaces/comics.interface
 import { HomeService } from './home.service';
 import { PageEvent } from '@angular/material/paginator';
 import { PaginatorService } from './../../core/services/paginator.service';
+import { SnackBarService } from 'src/app/core/services/snackbar.service';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +18,8 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private homeService: HomeService,
-    private paginatorService: PaginatorService
+    private paginatorService: PaginatorService,
+    private snack: SnackBarService
   ) {
     this.paginator = this.paginatorService.pagEvent;
   }
@@ -41,6 +43,7 @@ export class HomeComponent implements OnInit {
   private getPaginator(): void {
     this.paginatorService.setPagEvent$.subscribe((result: PageEvent) => {
       if (result) {
+        this.snack.success('Dados carregados com Sucesso!', 3000);
         this.paginator = result;
         this.getCharactersMarvel(this.paginator.pageSize * this.paginator.pageIndex)
       }
